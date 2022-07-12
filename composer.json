@@ -1,0 +1,15 @@
+{
+    "name": "raca/livro-php-design-patterns",
+    "autoload": {
+        "psr-4": {
+            "App\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Diogenes Estevao",
+            "email": "diogenestotal@gmail.com"
+        }
+    ],
+    "require": {}
+}
