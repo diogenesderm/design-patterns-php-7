@@ -67,11 +67,11 @@ require_once 'vendor/autoload.php';
 //     print_r($pedidotDeTeste);
 // }
 
-use App\Facade\BibliotecaFacade;
-use App\Facade\ModuloApiSms;
-use App\Facade\ModuloControleClientes;
-use App\Facade\ModuloControleEstoque;
-use App\Facade\ModuloEmail;
+// use App\Facade\BibliotecaFacade;
+// use App\Facade\ModuloApiSms;
+// use App\Facade\ModuloControleClientes;
+// use App\Facade\ModuloControleEstoque;
+// use App\Facade\ModuloEmail;
 
 // $moduloControleEstoque = new ModuloControleEstoque();
 // $codigoLivro = '123456';
@@ -99,11 +99,43 @@ use App\Facade\ModuloEmail;
 // $moduloSms->enviaSms($token, 'Biblioteca de Teste', $cliente['nome'], $cliente['telefone'], "Aluguel de libro de codigo '{$codigoLivro}' efetuado com sucesso!");
 
 
-$bibliotecaFacede = new BibliotecaFacade();
-$codigoLivro = '123455';
-$cpfCliente = '01276547129';
-$efetuouRetirada = $bibliotecaFacede->efetuarRetirada($codigoLivro, $cpfCliente);
+// $bibliotecaFacede = new BibliotecaFacade();
+// $codigoLivro = '123455';
+// $cpfCliente = '01276547129';
+// $efetuouRetirada = $bibliotecaFacede->efetuarRetirada($codigoLivro, $cpfCliente);
 
-if ($efetuouRetirada) {
-    $bibliotecaFacede->dispararMensagns($codigoLivro, $cpfCliente, 'chave_pai', 'senha_api');
-}
+// if ($efetuouRetirada) {
+//     $bibliotecaFacede->dispararMensagns($codigoLivro, $cpfCliente, 'chave_pai', 'senha_api');
+// }
+
+// use App\Decorator\AnelDeFogo;
+// use App\Decorator\ColarDeFogo;
+// use App\Decorator\EspadaMagica;
+// use App\Decorator\Mago;
+
+// $decorador = new Mago();
+
+// $decorador = new AnelDeFogo($decorador);
+// $decorador = new AnelDeFogo($decorador);
+// $decorador = new ColarDeFogo($decorador);
+// $decorador = new EspadaMagica($decorador);
+
+// echo $decorador->getNome(); echo "\n";
+// echo "Ataque = {$decorador->getAtaque()}"; echo "\n";
+
+// echo '<pre>';
+// print_r($decorador);
+
+use App\Memento\Texto;
+$text = new Texto();
+$text->escreverTexto("Ola");
+$text->escreverTexto("A");
+$text->escreverTexto("B");
+$text->escreverTexto("C");
+
+echo $text->retornarTexto();
+$text->desfazerEscrita();
+$text->desfazerEscrita();
+$text->desfazerEscrita();
+$text->desfazerEscrita();
+echo $text->retornarTexto();
